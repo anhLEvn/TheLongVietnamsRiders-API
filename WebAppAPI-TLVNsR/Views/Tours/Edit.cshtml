@@ -1,0 +1,75 @@
+﻿@model WebAppAPI_TLVNsR.Models.Tour
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Tour</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="TitleTour" class="control-label"></label>
+                <input asp-for="TitleTour" class="form-control" />
+                <span asp-validation-for="TitleTour" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DescriptionTour" class="control-label"></label>
+                <input asp-for="DescriptionTour" class="form-control" />
+                <span asp-validation-for="DescriptionTour" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ItineraryFileName" class="control-label"></label>
+                <input asp-for="ItineraryFileName" class="form-control" />
+                <span asp-validation-for="ItineraryFileName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PriceTour" class="control-label"></label>
+                <input asp-for="PriceTour" class="form-control" />
+                <span asp-validation-for="PriceTour" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LengthTour" class="control-label"></label>
+                <input asp-for="LengthTour" class="form-control" />
+                <span asp-validation-for="LengthTour" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MinParticipant" class="control-label"></label>
+                <input asp-for="MinParticipant" class="form-control" />
+                <span asp-validation-for="MinParticipant" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MaxParticipant" class="control-label"></label>
+                <input asp-for="MaxParticipant" class="form-control" />
+                <span asp-validation-for="MaxParticipant" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageFileName" class="control-label"></label>
+                <input asp-for="ImageFileName" class="form-control" />
+                <span asp-validation-for="ImageFileName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateCreated" class="control-label"></label>
+                <input asp-for="DateCreated" class="form-control" />
+                <span asp-validation-for="DateCreated" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
